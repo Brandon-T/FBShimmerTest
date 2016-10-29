@@ -1,0 +1,6 @@
+framework module Pods_FacebookShimmerTest {
+  umbrella header "Pods-FacebookShimmerTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

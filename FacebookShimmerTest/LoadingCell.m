@@ -32,7 +32,7 @@
 
 - (void)initControls {
     self.topView = [[UIView alloc] init];
-    self.bottomView = [[BottomView alloc] init];
+    self.bottomView = [[BottomView alloc] initWithFrame:CGRectMake(0, 0, 375, 125)];
     self.shimmerView = [[FBShimmeringView alloc] init];
 }
 
@@ -67,11 +67,13 @@
     [self.shimmerView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor].active = YES;
     [self.shimmerView.topAnchor constraintEqualToAnchor:self.topView.bottomAnchor].active = YES;
     [self.shimmerView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor].active = YES;
+    [self.shimmerView.heightAnchor constraintGreaterThanOrEqualToConstant:125.0].active = YES;
     #else
     [self.bottomView.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor].active = YES;
     [self.bottomView.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor].active = YES;
     [self.bottomView.topAnchor constraintEqualToAnchor:self.topView.bottomAnchor].active = YES;
     [self.bottomView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor].active = YES;
+    [self.bottomView.heightAnchor constraintGreaterThanOrEqualToConstant:125.0].active = YES;
     #endif
     
     [self.topView setTranslatesAutoresizingMaskIntoConstraints:NO];

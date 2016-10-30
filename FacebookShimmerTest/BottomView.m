@@ -29,6 +29,15 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if ((self = [super initWithFrame:frame])) {
+        [self initControls];
+        [self setTheme];
+        [self doLayout];
+    }
+    return self;
+}
+
 - (void)initControls {
     self.titleLabel = [[UILabel alloc] init];
     self.firstLine = [[UILabel alloc] init];

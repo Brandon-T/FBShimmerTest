@@ -39,6 +39,8 @@
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.tableView setRowHeight:UITableViewAutomaticDimension];
+    [self.tableView setEstimatedRowHeight:300.0];
 }
 
 - (void)registerClasses {
@@ -65,7 +67,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 300.0;
+    return UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
